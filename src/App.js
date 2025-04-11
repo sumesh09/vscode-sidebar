@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Sidebar from './Sidebar';
+const fileTree = [
+  {
+    name: "public",
+    type: "folder",
+    subMenu: [
+      {
+        name: "index",
+        type: "file",
+      },
+    ],
+  },
+  {
+    name: "src",
+    type: "folder",
+    subMenu: [
+      {
+        name: "compenent",
+        type: "folder",
+        subMenu: [
+          {
+            name: "header",
+            type: "file",
+          },
+          {
+            name: "footer",
+            type: "file",
+          },
+        ],
+      },
+      {
+        name: "Hooks",
+        type: "folder",
+        subMenu: [
+          {
+            name: "useSome",
+            type: "file",
+          },
+        ],
+      },
+    ],
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar data={fileTree} />
     </div>
   );
 }
